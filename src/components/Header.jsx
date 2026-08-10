@@ -25,7 +25,8 @@ export default function Header() {
         <motion.button
         // while viene usato per gestire le animazioni quando un utente interagisce con un elemento, ad esempio mouse over, click ecc..
         whileHover={{
-          scale: 1.1
+          scale: 1.1,
+          // backgroundColor: '#8b11f0'
         }}
         transition={{type: 'spring', stiffness: 500}}
         onClick={handleStartAddNewChallenge} className="button">

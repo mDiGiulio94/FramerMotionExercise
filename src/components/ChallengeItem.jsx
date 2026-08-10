@@ -27,7 +27,10 @@ export default function ChallengeItem({
   }
 
   return (
-    <li>
+    <motion.li
+    // questa prop fa si che framer motion tenti di animare automaticamente gli item ai cambiamenti di layout
+    layout
+    >
       <article className="challenge-item">
         <header>
           <img {...challenge.image} />
@@ -61,6 +64,6 @@ export default function ChallengeItem({
           )}
         </div>
       </article>
-    </li>
+    </motion.li>
   );
 }

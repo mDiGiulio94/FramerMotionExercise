@@ -9,8 +9,8 @@ export default function Modal({ title, children, onClose }) {
       <motion.dialog
       // variant viene usato per rendere più facile l'udilizzo di condizioni ricorrenti, un'alternativa è utilizzare una costante o stato locale, ma variant è una prop nativa di framer motion
       variants={{
-        hidden: 0, y: 30,
-        visible: 1, y: 0
+        hidden: { opacity: 0, y: 30 },
+        visible: { opacity: 1, y: 0 }
       }}
       // initial permette di settare lo stato iniziale dell'item quando viene aggiunto al dom
       initial="hidden"
