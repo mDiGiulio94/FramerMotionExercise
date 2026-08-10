@@ -1,4 +1,5 @@
 import Badge from './Badge.jsx';
+import { motion } from 'framer-motion';
 
 function Tab({ isSelected, onSelect, badgeCaption, children }) {
   return (
@@ -8,9 +9,13 @@ function Tab({ isSelected, onSelect, badgeCaption, children }) {
         onClick={onSelect}
       >
         {children}
-        <Badge caption={badgeCaption}></Badge>
+        {/* la key segnala che ogni volta che cambia il valore il componente viene distrutto e ricreato, resettando anche tutte le animazioni e le prop collegate */}
+        <Badge key={badgeCaption} caption={badgeCaption}></Badge>
       </button>
-      {isSelected && <div className="active-tab-indicator" />}
+      {/* layoutId fa si che ogni volta che si renderizza un altro elemento con lo stesso layoutId di applicare un'animazione fluida a tale elemento */}
+      {isSelected && <motion.div 
+      layoutId='tab-indicator'
+      className="active-tab-indicator" />}
     </li>
   );
 }
